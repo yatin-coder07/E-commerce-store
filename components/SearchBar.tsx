@@ -1,7 +1,11 @@
 import { Search } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 
 const SearchBar = () => {
+ 
+
+  
+  
   return (
     <div className='search-container'>
       
@@ -12,7 +16,7 @@ const SearchBar = () => {
       name='query'/>
      </form>
       <div className="search-icon">
-        <button>
+        <button >
         <Search/>
         </button>
         
