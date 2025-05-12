@@ -9,6 +9,7 @@ export const productType = defineType( {
             name:"name",
             title:"Product Name",
             type:"string",
+            validation: (Rule) => Rule.required(),
            
         }),
         defineField({
@@ -25,21 +26,25 @@ export const productType = defineType( {
             name:"image",
             title:"Product Image",
             type:"image",
+            validation: (Rule) => Rule.required(),
             options:{
                 hotspot:true,
             }
+            
            
         }),
         defineField({
             name:"description",
             title:"Description",
             type:"text",
+            validation: (Rule) => Rule.required(),
            
         }),
         defineField({
             name:"price",
             title:"Price",
             type:"number",
+            validation: (Rule) => Rule.required(),
            
         }),
         defineField({
