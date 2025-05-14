@@ -27,6 +27,9 @@
   .search-icon{
     @apply bg-black text-white rounded-full flex justify-center items-center h-10 w-10 transition delay-50 duration-300 ease-in-out hover:bg-[#B4B4B4] hover:text-black
   }
+  .card-container{
+    @apply h-40 w-40 sm:h-70 sm:w-70 bg-cyan-300 flex 
+  }
 }
 
 @theme inline {
