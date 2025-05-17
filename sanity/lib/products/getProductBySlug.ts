@@ -1,14 +1,14 @@
 import { defineQuery } from "next-sanity"
 import { sanityFetch } from "../live";
 
-export const getProductById= async()=>{
-    const PRODUCT_BY_ID_QUERY =defineQuery(`*[_type == "product "&&  _id.current == $id][0]`);
+export const getProductById= async(slug:string)=>{
+    const PRODUCT_BY_SLUG_QUERY =defineQuery(`*[_type == "product" &&  slug.current == $slug]| order(name asc)[0]`);
 
     try{
         const product = await sanityFetch({
-            query:PRODUCT_BY_ID_QUERY,
+            query:PRODUCT_BY_SLUG_QUERY,
             params:{
-               id
+               slug
             }
         });
         return product.data||null;

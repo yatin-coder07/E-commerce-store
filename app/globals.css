@@ -40,6 +40,9 @@
   .product-card-title-container{
     @apply flex-col justify-center items-center
   }
+  .product-image-container{
+    @apply sm:h-40 flex justify-center items-center 
+  }
 }
 
 @theme inline {
