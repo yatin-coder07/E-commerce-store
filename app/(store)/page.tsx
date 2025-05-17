@@ -1,14 +1,16 @@
-import { client } from "@/sanity/lib/backendClient";
-import { ALL_PRODUCTS_QUERY } from "@/sanity/lib/queries";
-import ProductCard from "@/components/ProductCard";
+
 import ImageSlider from "@/components/ImageSlider";
+import ProductView from "@/components/ProductView";
+import { getAllCategories } from "@/sanity/lib/products/getAllcategories";
+import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
 
 
 export default async function Home () {
 
-  const products = await client.fetch(ALL_PRODUCTS_QUERY)
+  const products = await getAllProducts();
+  const categories = await getAllCategories();
   
-  console.log(JSON.stringify(products))
+ 
 
 
 
@@ -41,13 +43,10 @@ export default async function Home () {
           showControls 
           showIndicators />
    </div>
-    <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-5 md:grid-cols-3 bg-gray-200 p-9">
-     {products?.length > 0 ? (
-        products.map((product, index:number)=>(
-          <ProductCard key={product._id} product={product}/>
-        ))
-       ):(<p>No Products Listed yet</p>)}
-    </div>
+   <div>
+    <ProductView products={products} categories={categories}/>
+   </div>
+  
    </>
   );
 }

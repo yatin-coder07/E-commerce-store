@@ -16,7 +16,7 @@ const SearchBar = () => {
       name='query'/>
      </form>
       <div className="search-icon">
-        <button >
+        <button type='submit' >
         <Search/>
         </button>
         

@@ -5,10 +5,10 @@ import Link from 'next/link'
 import React from 'react'
 
 const ProductCard = ({product}:ProductCardProps) => {
-  console.log(JSON.stringify(product))
+  
   return (
     <>
-   <Link href={`/product/${product._id}`}>
+   <Link href={`/product/${product?._id}`}>
     <AnimatePresence>
       <motion.div 
       layout
@@ -24,11 +24,12 @@ const ProductCard = ({product}:ProductCardProps) => {
           src={imageUrl(product.image).url()}/>
         )}
        
-        <div className='product-card-title-container flex '><h1 className='product-card-title'>{product?.name}</h1>
-        <p className='text-[#494848] text-[15px] font-medium'>{product?.description}</p>
+        <div className='product-card-title-container flex '><h1 className='product-card-title'>{product?.name.length>20 ? `${product.name.slice(0,20)}...`:product.name }</h1>
+        <p className='text-[#494848] text-[15px] font-medium'>{product?.description.length>30 ?
+        `${product.description.slice(0,30)}...`:product.description}</p>
         </div>
         <div className="flex justify-start ">
-          <button className='font-medium border-2 '>${product.price}</button>
+          <button className='font-medium border-2 '>${product?.price}</button>
         </div>
         
       </motion.div>

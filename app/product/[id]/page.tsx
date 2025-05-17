@@ -1,11 +1,12 @@
-import React from 'react'
+import { getProductById } from "@/sanity/lib/products/getProductById"
 
-const page = () => {
+
+const Productpage = async({params}:{params:Promise<{id:string}>}) => {
+    const {id}=await params
+    const product = await getProductById(id)
   return (
-    <div>
-      page
-    </div>
+    <div>page has id : {id}</div>
   )
 }
 
-export default page
+export default Productpage
