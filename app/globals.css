@@ -40,8 +40,26 @@
   .product-card-title-container{
     @apply flex-col justify-center items-center
   }
+  .product-details-container{
+    @apply flex justify-center flex-col items-center sm:p-6 gap-4 p-10 md:flex md:flex-row lg:p-20 md:gap-6
+  }
   .product-image-container{
-    @apply sm:h-40 flex justify-center items-center 
+    @apply   sm:mt-5 
+  }
+  .product-details-name{
+    @apply font-bold sm:text-3xl mt-6 text-[25px] text-center lg:text-5xl
+  }
+  .product-details-description{
+    @apply lg:text-[18px]
+  }
+  .product-details-price{
+    @apply font-medium sm:text-2xl  flex gap-5 justify-between
+  }
+  .product-details-buttons-container{
+    @apply font-medium text-[25px]    text-white flex sm:gap-4 gap-2
+  }
+  .product-details-page-button{
+    @apply text-[15px] bg-black p-2  transition transform duration-250 ease-linear hover:bg-[#B4B4B4] hover:text-black sm:text-[20px] cursor-pointer
   }
 }
 

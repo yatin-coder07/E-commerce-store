@@ -18,12 +18,27 @@ const Productpage = async({params}:{params:Promise<{slug:string}>}) => {
       <div className="product-image-container">
         {product?.image && (
                   <img 
-                  src={imageUrl(product.image).url()}/>
+                  src={imageUrl(product.image).url()}
+                  className="sm:h-110 h-60 transition transform duration-150 sm:hover:scale-110 md:h-150 lg:w-200 "/>
                 )}
        
        
              
       </div>
+      <div className=" flex flex-col gap-15">
+         <div className="product-details-name ">{product?.name}</div>
+      <div className="product-details-price  "><button className="border-2 border-gray-400 p-2">${product.price}</button>
+      <div className="product-details-buttons-container   ">
+        <button className="product-details-page-button">Buy Now</button>
+        <button className="product-details-page-button">Add To Basket</button>
+      </div>
+      </div>
+      <div className="product-details-description text-[#484949]">
+       {product?.description}
+      </div>
+      </div>
+     
+      
     </section>
     </>
   )
