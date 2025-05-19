@@ -37,12 +37,7 @@ export default async function Home () {
 
   return (
    <>
-   <div className="slider-container p-10">
-    <ImageSlider slides={slides}
-     interval={3000} 
-          showControls 
-          showIndicators />
-   </div>
+ 
    <div>
     <ProductView products={products} categories={categories}/>
    </div>

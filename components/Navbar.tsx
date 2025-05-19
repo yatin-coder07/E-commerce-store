@@ -3,19 +3,33 @@
 import { ClerkLoaded, SignInButton, UserButton, useUser } from "@clerk/nextjs"
 
 import Link from "next/link";
+import  { AnimatePresence , motion } from "framer-motion"
 import SearchBar from "@/components/SearchBar";
 import { PackageIcon, ShoppingBasket } from "lucide-react";
 
 const Navbar = () => {
     const {user} = useUser();
-  return (
-    <div className='Header-container'>
-     <div>
+  return (<>
+    <section className='Header-container bg-gray-300'>
+     <div className="Navbar flex justify-between">
+       <div>
         <Link href={"/"}>
-        <h1 className="text-3xl font-bold cursor-pointer ml-2 mt-2">ShopZone</h1></Link>
+        <h1 className="text-2xl text-shadow-amber-900 font-bold cursor-pointer ml-2 mt-2">ShopEr</h1></Link>
      </div>
-     <div>
-        <SearchBar/>
+     <div className="links">
+      <Link href={"/"}>
+      <ul>Home</ul>
+      </Link>
+
+      <Link href={"/"}>
+      <ul>About</ul>
+      </Link>
+
+      <Link href={"/"}>
+      <ul>Help?</ul>
+      </Link>
+
+     
      </div>
 
      <div className="buttons">
@@ -52,7 +66,25 @@ const Navbar = () => {
         
      </div>
      
-    </div>
+     </div>
+    </section >
+    
+    <section className=" flex gap-3 bg-gray-300 sm:pl-10 sm:pt-8">
+      <motion.div className="flex flex-col gap-3"
+     >
+       <h1 className="sm:text-[35px] font-medium ">Get Latest Products At <br />
+       Best Prices</h1>
+       <h2>Your one stop to get all your needed cosmetics , electronics , <br />fashion and blogging stuff at best prices</h2>
+       <SearchBar/>
+      </motion.div>
+      <motion.div
+       layout
+      initial={{opacity:0.2}}
+      animate={{opacity:1}}
+      transition={{duration:0.3}} className="flex flex-col justify-end">
+       <img src={"/headphone.png"} alt="" className="sm:h-100 sm:w-140"/>
+      </motion.div>
+      </section></>
   )
 }
 

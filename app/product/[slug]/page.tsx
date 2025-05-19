@@ -8,13 +8,14 @@ const Productpage = async({params}:{params:Promise<{slug:string}>}) => {
      const isOutOfStock = product.stock != null && product.stock <=0
   return (
     <>
-    <section className="product-details-container">
-       <div>{isOutOfStock && (
-        <div className="bg-red-500 text-white font-medium sm:p-4 sm:h-15 sm:text-2xl  sm:w-50 text-center z-1 ">
+    <div>{isOutOfStock && (
+        <div className="bg-red-500 text-white font-medium sm:p-4 sm:h-15 sm:text-2xl  sm:w-50 text-center z-1 h-10 flex justify-center items-center ">
         Out Of Stock!
         
       </div>               
       )}</div>
+    <section className="product-details-container">
+       
       <div className="product-image-container">
         {product?.image && (
                   <img 
