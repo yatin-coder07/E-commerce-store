@@ -2,7 +2,7 @@ import React from 'react'
 import ProductCard from './ProductCard'
 
 const ProductsGrid = ({products}) => {
-  console.log(JSON.stringify(products))
+ 
   return (
     <>
     <div className="flex flex-col gap-5 bg-gray-100 p-10">

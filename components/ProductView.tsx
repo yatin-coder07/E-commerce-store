@@ -1,18 +1,20 @@
 import React from 'react'
 import ProductsGrid from './ProductsGrid'
+import CategorySelectorComponent from './ui/CategorySelectorComponent'
 
-const ProductView = ({products}:ProductViewProps) => {
+const ProductView = ({products , categories}:ProductViewProps) => {
+   console.log(JSON.stringify(categories))
      
   return (
     <div className='flex flex-col'>{/*categories*/ }
     <div className='w-full sm:w-[200px]'>
-      {/*<CategorySelectorComponent categories={categories}/> */}
+     <CategorySelectorComponent categories={categories}/> 
     </div>
     
     {/*Products*/}
     <div>
         <div>
-           <ProductsGrid products={products}/>
+           <ProductsGrid products={products} />
         </div>
     </div>
     </div>
