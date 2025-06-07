@@ -12,7 +12,7 @@ const ProductView = ({products , categories}:ProductViewProps) => {
     </div>
     
     {/*Products*/}
-    hey everyone
+  
     <div>
         <div>
            <ProductsGrid products={products} />

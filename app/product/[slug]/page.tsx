@@ -1,3 +1,4 @@
+import AddToBasketButton from "@/components/AddToBasketButton"
 import { imageUrl } from "@/lib/imageUrl"
 import { getProductById } from "@/sanity/lib/products/getProductBySlug"
 
@@ -30,8 +31,9 @@ const Productpage = async({params}:{params:Promise<{slug:string}>}) => {
          <div className="product-details-name ">{product?.name}</div>
       <div className="product-details-price  "><button className="border-2 border-gray-400 p-2">${product.price}</button>
       <div className="product-details-buttons-container   ">
+        {isOutOfStock}
         <button className="product-details-page-button">Buy Now</button>
-        <button className="product-details-page-button">Add To Basket</button>
+        <AddToBasketButton product={product} disabled={isOutOfStock}/>
       </div>
       </div>
       <div className="product-details-description text-[#484949]">
